@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <property name="STACK_TRACE_LEVEL_COUNT" value="15"/>
+
+    <property name="GENERAL_PATTERN" scope="context"
+              value="%-7([%level]) %date{yyyy-MM-dd'T'HH:mm:ss.SSS} thread:[%-25.25(%thread)] %logger{100}.%method@%line:%n\t%message %rootException{${STACK_TRACE_LEVEL_COUNT}}%n%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.classic.android.LogcatAppender">
+        <encoder>
+            <pattern>${GENERAL_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+
+    <root>
+        <level value="ALL"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

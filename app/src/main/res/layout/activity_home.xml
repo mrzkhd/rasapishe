@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:fitsSystemWindows="true"
+    tools:context="com.rasapishe.boom.screen.HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/inc_appbarlayout"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/ad_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"/>
+
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"/>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+
+            <Button
+                android:id="@+id/button"
+                style="@style/BtnRaised"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_category_business"
+                android:theme="@style/BtnRaised.color1"/>
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/BtnRaised"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_nearby_business"
+                android:theme="@style/BtnRaised.color2"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/BtnRaised"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_member_business"
+                android:theme="@style/BtnRaised.color3"/>
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/BtnRaised"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_favorite_business"
+                android:theme="@style/BtnRaised.color4"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20">
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/BtnRaised"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_recipt"
+                android:theme="@style/BtnRaised.color5"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/BtnRaised"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_new_business"
+                android:theme="@style/BtnRaised.color6"/>
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/BtnRaised"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_my_business"
+                android:theme="@style/BtnRaised.color7"/>
+        </TableRow>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">پرداخت آبونمان</string>
+    <string name="btn_nearby_business">اطراف من</string>
+    <string name="btn_category_business">پیشه ها</string>
+    <string name="btn_favorite_business">علاقه مندی ها</string>
+    <string name="btn_member_business">عضویت ها</string>
+    <string name="btn_recipt">پرداخت های من \n مدیریت پرداخت ها وصورتحساب ها</string>
+    <string name="btn_new_business">ثبت پیشه جدید</string>
+    <string name="btn_my_business">پیشه های من</string>
+    <string name="title_business_list">Businesses</string>
+    <string name="title_business_detail">Business Detail</string>
+</resources>

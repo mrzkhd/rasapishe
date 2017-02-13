@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.rasapishe.boom">
+
+    <application
+        android:name=".RasaApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".screen.HomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.BusinessListActivity"
+            android:label="@string/title_business_list"
+            android:parentActivityName=".screen.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rasapishe.boom.screen.HomeActivity"/>
+        </activity>
+        <activity
+            android:name=".screen.BusinessDetailActivity"
+            android:label="@string/title_business_detail"
+            android:parentActivityName=".screen.BusinessListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rasapishe.boom.screen.BusinessListActivity"/>
+        </activity>
+    </application>
+
+</manifest>
