@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:fitsSystemWindows="true"
     tools:context="com.rasapishe.boom.screen.HomeActivity">
 
@@ -35,7 +34,7 @@
             android:layout_weight="10">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/allBusinessButton"
                 style="@style/BtnRaised"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -112,7 +111,7 @@
                 android:theme="@style/BtnRaised.color6"/>
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/myBusinessButton"
                 style="@style/BtnRaised"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

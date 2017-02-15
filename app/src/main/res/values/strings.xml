@@ -7,6 +7,20 @@
     <string name="btn_recipt">پرداخت های من \n مدیریت پرداخت ها وصورتحساب ها</string>
     <string name="btn_new_business">ثبت پیشه جدید</string>
     <string name="btn_my_business">پیشه های من</string>
-    <string name="title_business_list">Businesses</string>
+    <string name="title_business_list">پیشه ها</string>
     <string name="title_business_detail">Business Detail</string>
+    <string name="action_share">اشتراک گذاری</string>
+    <string name="action_like">لایک</string>
+    <string name="action_member">مشتری</string>
+
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyB8rhUqyDGHOfw9iobGIymMjNOpXQB3eAc</string>
+    <string name="ok_button_text">تایید</string>
+    <string name="cancel_button_text">انصراف</string>
+    <string name="membership_dialog_title">هشدار</string>
+    <string name="membership_dialog_text">آیا می خواید مشتری این کسب و کار شوید؟</string>
+    <string name="title_factor">صدور صورتحساب</string>
+    <string name="PeriodicalFactor">صورتحساب دوره ای</string>
+    <string name="normalFactor">صورتحساب یک باره</string>
+    <string name="success_factor_dialog_text">صورتحساب با موفقیت صادر شد.</string>
 </resources>

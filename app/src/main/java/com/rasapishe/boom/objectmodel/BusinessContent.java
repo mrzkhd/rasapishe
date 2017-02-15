@@ -42,11 +42,19 @@ public class BusinessContent {
         Scanner inputReader = new Scanner(is, "UTF-8");
         inputReader.nextLine();
         while(inputReader.hasNextLine()){
-            String line = inputReader.nextLine();
-            String[] tokens = line.split(",");
-            if(tokens.length != 5) continue;
-            addItem(new Business(tokens[0], tokens[1], BusinessType.getById(Integer.parseInt(tokens[2])), tokens[3], tokens[4], "", ""));
-
+            Business b = new Business();
+            String[] lineTokens = inputReader.nextLine().split("\t");
+            b.setId(lineTokens[0]);
+            b.setTitle(lineTokens[1]);
+            b.setRanking(Integer.parseInt(lineTokens[2]));
+            b.setMine(Integer.parseInt(lineTokens[3]) == 1);
+            b.setType(BusinessType.getById(Integer.parseInt(lineTokens[4])));
+            b.setPhone(lineTokens[5]);
+            b.setAddress(lineTokens[6]);
+            b.setLat(Double.parseDouble(lineTokens[7]));
+            b.setLang(Double.parseDouble(lineTokens[8]));
+            b.setDescription(inputReader.nextLine());
+            addItem(b);
         }
     }
 
@@ -80,4 +88,12 @@ public class BusinessContent {
         return result;
     }
 
+    public static List<Business> findMyBusiness() {
+        List<Business> result = new ArrayList<Business>();
+        for (Business business : ITEMS) {
+            if(business.isMine())
+                result.add(business);
+        }
+        return result;
+    }
 }

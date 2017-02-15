@@ -33,12 +33,7 @@ import static android.support.v4.app.NavUtils.navigateUpFromSameTask;
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
-public class BusinessListActivity extends AppCompatActivity {
-
-    public static final String QUERY_KEY = "Query";
-    public static final String TITLE_KEY = "TITLE";
-
-    private String query;
+public class MyBusinessListActivity extends AppCompatActivity {
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -49,17 +44,6 @@ public class BusinessListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business_list);
-
-        if (getIntent().getExtras() != null) {
-            Bundle params = getIntent().getExtras();
-            if (params.containsKey(QUERY_KEY)) {
-                query = params.getString(QUERY_KEY);
-            }
-
-            if (params.containsKey(TITLE_KEY)) {
-                setTitle(params.getInt(TITLE_KEY));
-            }
-        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -95,7 +79,7 @@ public class BusinessListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(BusinessContent.findBusiness(query)));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(BusinessContent.findMyBusiness()));
     }
 
     public class SimpleItemRecyclerViewAdapter
@@ -111,7 +95,7 @@ public class BusinessListActivity extends AppCompatActivity {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.business_list_content, parent, false);
+                    .inflate(R.layout.my_business_list_content, parent, false);
             return new ViewHolder(view);
         }
 
@@ -119,17 +103,17 @@ public class BusinessListActivity extends AppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
             holder.mNameView.setText(mValues.get(position).getTitle());
-            holder.mTypeView.setText(mValues.get(position).getType().getTitle());
-            holder.mIconView.setImageResource(mValues.get(position).getType().getImageId());
+            holder.mAllMembersView.setText(mValues.get(position).getAllMembers() + "");
+            holder.mFactorCountView.setText(mValues.get(position).getFactorCounts() + "");
+            holder.mPiadView.setText(mValues.get(position).getPaidMembers() + "");
+            holder.mUnpiadView.setText(mValues.get(position).getUnpaidMembers() + "");
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     Context context = v.getContext();
-                    Intent intent = new Intent(context, BusinessDetailActivity.class);
-                    intent.putExtra(BusinessDetailActivity.ARG_ITEM_ID, holder.mItem.getId());
-
+                    Intent intent = new Intent(context, FactorActivity.class);
                     context.startActivity(intent);
 
                 }
@@ -144,16 +128,20 @@ public class BusinessListActivity extends AppCompatActivity {
         public class ViewHolder extends RecyclerView.ViewHolder {
             public final View mView;
             public final TextView mNameView;
-            public final TextView mTypeView;
-            public final ImageView mIconView;
+            public final TextView mAllMembersView;
+            public final TextView mFactorCountView;
+            public final TextView mPiadView;
+            public final TextView mUnpiadView;
             public Business mItem;
 
             public ViewHolder(View view) {
                 super(view);
                 mView = view;
                 mNameView = (TextView) view.findViewById(R.id.name);
-                mTypeView = (TextView) view.findViewById(R.id.type);
-                mIconView = (ImageView) view.findViewById(R.id.icon);
+                mAllMembersView = (TextView) view.findViewById(R.id.allMembers);
+                mFactorCountView = (TextView) view.findViewById(R.id.factorCount);
+                mPiadView = (TextView) view.findViewById(R.id.paidFactors);
+                mUnpiadView = (TextView) view.findViewById(R.id.unPaidCount);
             }
 
             @Override

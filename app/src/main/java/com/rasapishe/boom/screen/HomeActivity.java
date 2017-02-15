@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.rasapishe.boom.R;
+import com.rasapishe.boom.RasaApplication;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -50,6 +52,23 @@ public class HomeActivity extends AppCompatActivity {
                     return false;
                 }
             });
+
+        findViewById(R.id.allBusinessButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, BusinessListActivity.class);
+                intent.putExtra(BusinessListActivity.TITLE_KEY, R.string.btn_category_business);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.myBusinessButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, MyBusinessListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -68,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
             //
             // http://developer.android.com/design/patterns/navigation.html#up-vs-back
             //
-            navigateUpFromSameTask(this);
+           finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
