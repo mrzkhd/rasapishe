@@ -1,2 +1,0 @@
-git config --global http.proxy http://z.jamshidi:j,sk94civh@192.168.124.101:8585
-git remote add origin https://zjamshidi:zahra1234javad@github.com/zjamshidi/rasapishe.git
