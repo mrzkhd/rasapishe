@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.rasapishe.boom">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:name=".RasaApplication"
         android:allowBackup="true"
@@ -37,6 +40,32 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rasapishe.boom.screen.BusinessListActivity"/>
         </activity>
+        <activity
+            android:name=".screen.MyBusinessListActivity"
+            android:label="@string/btn_my_business"
+            android:parentActivityName=".screen.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rasapishe.boom.screen.HomeActivity"/>
+        </activity>
+        <activity android:name=".screen.FactorActivity"
+                  android:label="@string/title_factor"
+                  android:parentActivityName=".screen.MyBusinessListActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rasapishe.boom.screen.MyBusinessListActivity"/>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key"/>
+
+
     </application>
 
 </manifest>
